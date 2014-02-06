@@ -25,6 +25,7 @@ SMS notifications From iranian SMS Web services To Woocommerce Customers
  * MTBSMS.ir
  * SabaPayamak.info
  * ParandSMS.com
+ * SabzPayamak.ir
 * Send SMS to admin when New Order 
 * Send SMS to customer when New Order
 * Send SMS to customer When Change order status to processing 

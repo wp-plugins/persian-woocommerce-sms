@@ -26,7 +26,7 @@
           </th>
         <td class="forminp forminp-number"><select id="persianscript_sms_woocommerce[smswebservice]" name="persianscript_sms_woocommerce[smswebservice]" tabindex="<?php echo $tab++; ?>">
             <?php
-            $proveedores = array("panizsms" => "PANIZSMS.COM","hi-sms" => "Hi-SMS.ir","mtbsms" => "MTBSMS.ir","parandsms" => "ParandSMS.com","persiapanel" => "PersiaPanel.ir","farapayamak" => "FaraPayamak.ir","sabapayamak" => "SabaPayamak.info");
+            $proveedores = array("panizsms" => "PANIZSMS.COM","hi-sms" => "Hi-SMS.ir","mtbsms" => "MTBSMS.ir","parandsms" => "ParandSMS.com","persiapanel" => "PersiaPanel.ir","farapayamak" => "FaraPayamak.ir","sabapayamak" => "SabaPayamak.info","sabzpayamak" => "SabzPayamak.ir");
             foreach ($proveedores as $valor => $proveedor) 
             {
 				$chequea = '';

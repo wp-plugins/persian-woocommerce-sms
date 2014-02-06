@@ -151,6 +151,11 @@ function woo_sms_envia_sms($configuracion, $userphone, $mensaje) {
 		$respuesta = @file_get_contents("http://persiapanel.ir/API/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
 	}
 	
+	elseif ($configuracion['smswebservice'] == "sabzpayamak") 
+	{
+		$respuesta = @file_get_contents("http://sabzpayamak.ir/API/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
+	}
+	
 	
 	
 }
@@ -295,7 +300,7 @@ echo '
 		</div>';
 }
 
-if (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="sabapayamak")
+elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="sabapayamak")
 
 {
 ini_set("soap.wsdl_cache_enabled", "0");
@@ -333,7 +338,7 @@ echo '
 		</div>';
 }
 
-if (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="farapayamak")
+elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="farapayamak")
 
 {
 ini_set("soap.wsdl_cache_enabled", "0");
@@ -371,7 +376,7 @@ echo '
 		</div>';
 }
 
-if (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="persiapanel")
+elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="persiapanel")
 
 {
 
@@ -386,7 +391,37 @@ echo '
 		</div>';
 }
 
-if (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="mtbsms")
+elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="sabzpayamak")
+
+{
+
+		
+	
+echo '
+		<div class="woocommerce-sms-dashboard">
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.sabzpayamak.ir/" target="_brank">سبز پیامک</a></div>
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
+		</div>';
+}
+
+elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="parandsms")
+
+{
+
+		
+	
+echo '
+		<div class="woocommerce-sms-dashboard">
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.parandsms.com/" target="_brank">پرند اس ام اس</a></div>
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
+		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
+		</div>';
+}
+
+elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="mtbsms")
 
 {
 
