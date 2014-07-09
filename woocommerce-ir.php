@@ -10,9 +10,7 @@
 		$configuracion = get_option('persianscript_sms_woocommerce');
   ?>
   <h3><a href="<?php echo $woo_sms['plugin_url']; ?>" title="Woocommerce SMS Plugin"><?php echo $woo_sms['plugin']; ?></a></h3>
-  <p>
-	این افزونه به صورت رایگان عرضه شده است. در صورتی که قصد حمایت از ما را دارید می توانید <a href="http://shop.persianscript.ir/products/woocommerce-sms/" target="_blank"> اینجا کلیک کنید</a>.
-  </p>
+  
   
   <form method="post" action="options.php">
     <?php settings_fields('persianscript_sms_woocommerce_group'); ?>
@@ -26,7 +24,7 @@
           </th>
         <td class="forminp forminp-number"><select id="persianscript_sms_woocommerce[smswebservice]" name="persianscript_sms_woocommerce[smswebservice]" tabindex="<?php echo $tab++; ?>">
             <?php
-            $proveedores = array("panizsms" => "PANIZSMS.COM","hi-sms" => "Hi-SMS.ir","mtbsms" => "MTBSMS.ir","parandsms" => "ParandSMS.com","persiapanel" => "PersiaPanel.ir","farapayamak" => "FaraPayamak.ir","sabapayamak" => "SabaPayamak.info","sabzpayamak" => "SabzPayamak.ir");
+            $proveedores = array("panizsms" => "PANIZSMS.COM","mtbsms" => "MTBSMS.ir","parandsms" => "ParandSMS.com","persiapanel" => "PersiaPanel.ir","sabapayamak" => "SabaPayamak.info","sabzpayamak" => "SabzPayamak.ir");
             foreach ($proveedores as $valor => $proveedor) 
             {
 				$chequea = '';

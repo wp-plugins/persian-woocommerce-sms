@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Persian Woocommerce SMS
-Version: 1.4
+Version: 1.5
 Plugin URI: http://www.woocommerce.ir/plugins.html
 Description: این افزونه شما را قادر می سازد تا براحتی قابلیت ارسال پیامک را در سیستم ووکامرس پارسی فراهم کنید. تمامی حقوق این افزونه متعلق به تیم ووکامرس پارسی می باشد و هر گونه کپی برداری ،  فروش آن غیر مجاز می باشد.
 Author URI: http://www.woocommerce.ir/
@@ -118,43 +118,73 @@ function woo_sms_envia_sms($configuracion, $userphone, $mensaje) {
 	
 	if ($configuracion['smswebservice'] == "panizsms") 
 	{
-		$respuesta = @file_get_contents("http://www.panizsms.ir/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
+	$url = "http://87.107.121.54/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'];
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	$data = curl_exec($curl);
+	curl_close($curl);
 	}
-	
-	elseif ($configuracion['smswebservice'] == "hi-sms") 
-	{
-		$respuesta = @file_get_contents("http://payamak.hi-sms.ir/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
-	}
-	
+
 	elseif ($configuracion['smswebservice'] == "sabapayamak") 
 	{
-		$respuesta = @file_get_contents("http://sabapayamak.com/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
+	$url = "http://sabapayamak.com/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'];
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	$data = curl_exec($curl);
+	curl_close($curl);
 	}
 	
-	elseif ($configuracion['smswebservice'] == "farapayamak") 
-	{
-		$respuesta = @file_get_contents("http://payamak.hi-sms.ir/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
-	}
+	
 	
 	elseif ($configuracion['smswebservice'] == "mtbsms") 
 	{
-		$respuesta = @file_get_contents("http://mtbsms.ir/httpService/SendSMS.aspx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&user=" . $configuracion['smspanelusername'] . "&pass=" . $configuracion['smspanelpassword'] );
+	$url = "http://mtbsms.ir/httpService/SendSMS.aspx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&user=" . $configuracion['smspanelusername'] . "&pass=" . $configuracion['smspanelpassword'];
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	$data = curl_exec($curl);
+	curl_close($curl);
 	}
 	
 	elseif ($configuracion['smswebservice'] == "parandsms") 
 	{
-		$respuesta = @file_get_contents("http://parandsms.ir/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
+	$url = "http://parandsms.ir/post/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'];
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	$data = curl_exec($curl);
+	curl_close($curl);
 	}
 	
 	elseif ($configuracion['smswebservice'] == "persiapanel") 
 	{
-		$respuesta = @file_get_contents("http://persiapanel.ir/API/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
+	$url = "http://persiapanel.ir/API/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'];
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	$data = curl_exec($curl);
+	curl_close($curl);
 	}
 	
 	elseif ($configuracion['smswebservice'] == "sabzpayamak") 
 	{
-		$respuesta = @file_get_contents("http://sabzpayamak.ir/API/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'] );
+	$url = "http://sabzpayamak.ir/API/sendSMS.ashx?from=" . $configuracion['smspanelsender'] . "&to=" . $userphone . "&text=" . woocommerce_ir_sms_check(woocommerce_ir_sms_normal($mensaje)) . "&username=" . $configuracion['smspanelusername'] . "&password=" . $configuracion['smspanelpassword'];
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_HEADER, false);
+	$data = curl_exec($curl);
+	curl_close($curl);
 	}
+	
+	
 	
 	
 	
@@ -249,214 +279,6 @@ function woo_sms_actualizacion() {
 	global $woo_sms;
 	
     echo '<div class="error fade" id="message"><h3>' . $woo_sms['plugin'] . '</h3><h4>لطفا تنظیمات افزونه پیامک را انجام دهید. اینجا <a href="' . $woo_sms['ajustes'] . '" title="تنظیمات">کلیک کنید</a></h4></div>';
-}
-
-
-add_action('wp_dashboard_setup', 'woo_sms_dashboard');
-function woo_sms_dashboard() {
-global $wp_meta_boxes;
-
-wp_add_dashboard_widget('custom_help_widget', 'پیامک ووکامرس', 'custom_dashboard_help');
-}
-function custom_dashboard_help() {
-$configuracion = get_option('persianscript_sms_woocommerce');
-wp_enqueue_style('woo_sms_style'); 
-
-if (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="panizsms")
-
-{
-ini_set("soap.wsdl_cache_enabled", "0");
-$sms_client = new SoapClient('http://www.panizsms.ir/post/receive.asmx?wsdl', array('encoding'=>'UTF-8'));
-
-$parameters['username'] = $configuracion['smspanelusername'];
-$parameters['password'] = $configuracion['smspanelpassword'];
-$parameters['isRead'] =false;
-
-$inbox = 'پیامک های دریافتی: '. $sms_client->GetInboxCount($parameters)->GetInboxCountResult .'<br>';
-
-$sms_credit = new SoapClient('http://www.panizsms.ir/post/send.asmx?wsdl', array('encoding'=>'UTF-8'));
-
-		$credit = $sms_credit->GetCredit(array('username' => $parameters['username'], 'password' => $parameters['password']))->GetCreditResult;
-		
-		if ($credit < 0)
-		{
-			$error  = 1;
-			$credit_str = 'خطایی در ارتباط با درگاه رخ داده است. کد خطا: '. $credit;
-		}
-		else
-		{
-			$credit_str = 'اعتبار درگاه: ' . ceil($credit) .' پیامک باقیمانده';
-		}
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.panizsms.com/" target="_brank">پانیز پیامک</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/credit.png" />' . $credit_str . '</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/inbox.png" />' . $inbox . '</div>
-		</div>';
-}
-
-elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="sabapayamak")
-
-{
-ini_set("soap.wsdl_cache_enabled", "0");
-$sms_client = new SoapClient('http://www.sabapayamak.com/post/receive.asmx?wsdl', array('encoding'=>'UTF-8'));
-
-$parameters['username'] = $configuracion['smspanelusername'];
-$parameters['password'] = $configuracion['smspanelpassword'];
-$parameters['isRead'] =false;
-
-$inbox = 'پیامک های دریافتی: '. $sms_client->GetInboxCount($parameters)->GetInboxCountResult .'<br>';
-
-$sms_credit = new SoapClient('http://www.sabapayamak.com/post/send.asmx?wsdl', array('encoding'=>'UTF-8'));
-
-		$credit = $sms_credit->GetCredit(array('username' => $parameters['username'], 'password' => $parameters['password']))->GetCreditResult;
-		
-		if ($credit < 0)
-		{
-			$error  = 1;
-			$credit_str = 'خطایی در ارتباط با درگاه رخ داده است. کد خطا: '. $credit;
-		}
-		else
-		{
-			$credit_str = 'اعتبار درگاه: ' . ceil($credit) .' پیامک باقیمانده';
-		}
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.sabapayamak.info/" target="_brank">صبا پیامک</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/credit.png" />' . $credit_str . '</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/inbox.png" />' . $inbox . '</div>
-		</div>';
-}
-
-elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="farapayamak")
-
-{
-ini_set("soap.wsdl_cache_enabled", "0");
-$sms_client = new SoapClient('http://87.107.121.54/post/receive.asmx?wsdl', array('encoding'=>'UTF-8'));
-
-$parameters['username'] = $configuracion['smspanelusername'];
-$parameters['password'] = $configuracion['smspanelpassword'];
-$parameters['isRead'] =false;
-
-$inbox = 'پیامک های دریافتی: '. $sms_client->GetInboxCount($parameters)->GetInboxCountResult .'<br>';
-
-$sms_credit = new SoapClient('http://87.107.121.54/post/send.asmx?wsdl', array('encoding'=>'UTF-8'));
-
-		$credit = $sms_credit->GetCredit(array('username' => $parameters['username'], 'password' => $parameters['password']))->GetCreditResult;
-		
-		if ($credit < 0)
-		{
-			$error  = 1;
-			$credit_str = 'خطایی در ارتباط با درگاه رخ داده است. کد خطا: '. $credit;
-		}
-		else
-		{
-			$credit_str = 'اعتبار درگاه: ' . ceil($credit) .' پیامک باقیمانده';
-		}
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.farapayamak.ir/" target="_brank">فرا پیامک</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/credit.png" />' . $credit_str . '</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/inbox.png" />' . $inbox . '</div>
-		</div>';
-}
-
-elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="persiapanel")
-
-{
-
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.persiapanel.ir/" target="_brank">پرشیا پنل</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		</div>';
-}
-
-elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="sabzpayamak")
-
-{
-
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.sabzpayamak.ir/" target="_brank">سبز پیامک</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		</div>';
-}
-
-elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="parandsms")
-
-{
-
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.parandsms.com/" target="_brank">پرند اس ام اس</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		</div>';
-}
-
-elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="mtbsms")
-
-{
-
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.mtbsms.ir/" target="_brank">MTBSMS</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		</div>';
-}
-
-
-
-elseif (isset($configuracion['smswebservice']) && isset($configuracion['smspanelusername']) && isset($configuracion['smspanelpassword']) && $configuracion['smswebservice'] =="hi-sms")
-
-{
-
-		
-	
-echo '
-		<div class="woocommerce-sms-dashboard">
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/activeservice.png" />سرویس فعال: <a href="http://www.hi-sms.ir/" target="_brank">های اس ام اس</a></div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/sender.png" />شماره ارسال کننده: '. $configuracion['smspanelsender'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/username.png" />نام کاربری سرویس: '. $configuracion['smspanelusername'] .'</div>
-		<div class="woo-sms-box"><img src="../wp-content/plugins/persian-woocommerce-sms/images/adminmobile.png" />شماره موبایل مدیر: '. $configuracion['userphone'] .'</div>
-		</div>';
-}
-
-
-else {echo '<p class="woocommerce-sms-setting">شما تنظیمات افزونه را انجام نداده اید. برای تنظیم پیامک ووکامرس <a href="admin.php?page=woo_sms">اینجا کلیک کنید</a>.</p>';}
-
-echo '<p class="woocommerce-copyright">تمامی حقوق افزونه پیامک ووکامرس متعلق به <a href="http://www.woocommerce.ir" target="_blank">ووکامرس پارسی</a> می باشد</p>';
 }
 
 ?>

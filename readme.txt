@@ -1,11 +1,11 @@
 === Persian Woocommerce SMS ===
 author: Persian Woocommerce
 author URI: http://www.woocommerce.ir/
-Donate link: http://shop.persianscript.ir/products/woocommerce-sms/
+Donate link: http://www.woocommerce.ir/
 plugin URI: http://www.woocommerce.ir/plugins.html
 Tags: woocommerce, commerce, e-commerce, commerce, shop, virtual shop, sms, sms notifications, iran, persian, farsi,woocommerce persian
 Requires at least: 3.5
-Tested up to: 3.8.1
+Tested up to: 3.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,8 +19,6 @@ SMS notifications From iranian SMS Web services To Woocommerce Customers
 = Web Services =
 * Web Services Support:
  * Panizsms.com
- * Hi-SMS.ir
- * Farapayamak.ir
  * PersiaPanel.ir
  * MTBSMS.ir
  * SabaPayamak.info
@@ -56,10 +54,18 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. settings page
 
 == Changelog ==
+= 1.5 =
+* Fixed: some bugs fixed
+= 1.4 =
+* Fixed: some bugs fixed
 = 1.3 =
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 1.5 =
+* Fixed: some bugs fixed
+= 1.4 =
+* Fixed: some bugs fixed
 = 1.3 =
 * Added: New Web services (5 new sms panel...)
 
