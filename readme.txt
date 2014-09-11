@@ -3,35 +3,31 @@ author: Persian Woocommerce
 author URI: http://www.woocommerce.ir/
 Donate link: http://www.woocommerce.ir/
 plugin URI: http://www.woocommerce.ir/plugins.html
-Tags: woocommerce, commerce, e-commerce, commerce, shop, virtual shop, sms, sms notifications, iran, persian, farsi,woocommerce persian
+Tags: woocommerce, commerce, e-commerce, commerce, shop, virtual shop, sms, sms notifications, iran, persian, farsi,woocommerce persian, e-commerce, ووکامرس, ووکامرس فارسی
 Requires at least: 3.5
-Tested up to: 3.9.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 4.0
 
-SMS notifications From iranian SMS Web services To Woocommerce Customers
+ارسال پیامک به مشتریان در سیستم فروشگاه ساز ووکامرس
 
 == Description ==
 **Persian Woocommerce SMS** نام یک افزونه کاربردی برای سیستم فروشگاه ساز رایگان ووکامرس می باشد که شما را قادر می سازد تا براحتی اقدام به اطلاع رسانی از طریق پیامک به کاربرانتان کنید.
 
-* مدیر فروشگاه در هنگام دریافت سفارش جدید یک پیامک دریافت می کند و همچنین مشتریان در هنگام ارسال سفارش ، تغییر وضعیت سفارش و یا تکمیل وضعیت سفارش پیامک دریافت می کنند. قابل ذکر است این افزونه با آخرین نسخه وردپرس (۳٫۸) و ووکامرس فارسی (۲٫۰٫۲۰) سازگاری کامل دارد.
+* مدیر فروشگاه در هنگام دریافت سفارش جدید یک پیامک دریافت می کند و همچنین مشتریان در هنگام ارسال سفارش ، تغییر وضعیت سفارش و یا تکمیل وضعیت سفارش پیامک دریافت می کنند. قابل ذکر است این افزونه با آخرین نسخه وردپرس (4) و ووکامرس فارسی (2.2) سازگاری کامل دارد.
 
-= Web Services =
-* Web Services Support:
+= درگاه های پیامک =
+* درگاه های پیامک فعال در افزونه
  * Panizsms.com
- * PersiaPanel.ir
- * MTBSMS.ir
- * SabaPayamak.info
- * ParandSMS.com
- * SabzPayamak.ir
-* Send SMS to admin when New Order 
-* Send SMS to customer when New Order
-* Send SMS to customer When Change order status to processing 
-* Send SMS to customer When Change order status to completed 
-* Send SMS to customer When Admin Add a note in order
-* Show credits of SMS Panel Account in Dashboard
-* support from tags in SMS texts: %id%, %order_key%, %billing_first_name%, %billing_last_name%, %billing_company%, %billing_address_1%, %billing_address_2%, %billing_city%, %billing_postcode%, %billing_country%, %billing_state%, %billing_email%, %billing_phone%, %shipping_first_name%, %shipping_last_name%, %shipping_company%, %shipping_address_1%, %shipping_address_2%, %shipping_city%, %shipping_postcode%, %shipping_country%, %shipping_state%, %shipping_method%, %shipping_method_title%, %payment_method%, %payment_method_title%, %order_subtotal%, %order_discount%, %cart_discount%, %order_tax%, %order_shipping%, %order_shipping_tax%, %order_total%, %status%, %shop_name%, %note%.
 
+* ارسال پیامک به مشتری در هنگام ثبت سفارش
+* ارسال پیامک به مدیر در هنگام ثبت سفارش
+* ارسال پیامک به مشتری و مدیر در صورت تغییر وضعیت سفارش
+* قابلیت ارسال پیامک تکی از طریق افزونه
+* قابلیت ارسال پیامک به مشتری از طریق صفحه سفارشات
+* قابلیت افزودن فیلد به صفحه سفارش مبنی بر دریافت پیامک
+* امکان تنظیم دریافت پیامک در وضعیت های مختلف سفارش (تکمیل شده ، معلق و...)
+* قابلیت تغییر متن پیشفرض ارسال پیامک به مشتری و مدیر
+* قابلیت تنظیم دریافت پیامک برای مدیر یا کاربر
+* نمایش وضعیت ارسال پیامک در برگه جزئیات سفارش در قسمت توضیحات
 = Support =
 *  [Persian Support in woocommerce.ir](http://woocommerce.ir/)
 
@@ -45,15 +41,16 @@ SMS notifications From iranian SMS Web services To Woocommerce Customers
 = Where can I find more information and documentation about the plug-in? =
 
 You can read complete documentations on the [woocommerce.ir](http://www.woocommerce.ir)
-= چرا پیامک ها ارسال نمی شوند؟ =
-شما می بایست در تنظیمات ووکامرس ، حتما کشور ایران را به عنوان کشور اصلی انتخاب کنید.
+
 
 == Screenshots ==
-1. dashboard widget
-2. dashboard widget 2
-3. settings page
+1. Settings page
+2. send sms to any
+3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0 =
+* کد نویسی مجدد و افزوده شدن امکانات جدید
 = 1.5 =
 * Fixed: some bugs fixed
 = 1.4 =
@@ -62,6 +59,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0 =
+* کد نویسی مجدد و افزوده شدن امکانات جدید
 = 1.5 =
 * Fixed: some bugs fixed
 = 1.4 =
