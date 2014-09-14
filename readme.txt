@@ -17,6 +17,10 @@ Tested up to: 4.0
 = درگاه های پیامک =
 * درگاه های پیامک فعال در افزونه
  * Panizsms.com
+ * ParandSMS.com
+ * gamapayamak.com
+ * limoosms.com
+ * max-sms.ir
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
 * ارسال پیامک به مدیر در هنگام ثبت سفارش
@@ -49,6 +53,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.1 =
+* رفع چند باگ و افزودن 4 درگاه پیامک
 = 2.0 =
 * کد نویسی مجدد و افزوده شدن امکانات جدید
 = 1.5 =
@@ -59,6 +65,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.1 =
+* رفع چند باگ و افزودن 4 درگاه پیامک
 = 2.0 =
 * کد نویسی مجدد و افزوده شدن امکانات جدید
 = 1.5 =

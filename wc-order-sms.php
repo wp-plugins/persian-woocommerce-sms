@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: ارسال پیامک ووکامرس
-Version: 2.0
+Version: 2.0.1
 Plugin URI: http://www.woocommerce.ir/plugins.html
 Description: این افزونه شما را قادر می سازد تا براحتی قابلیت ارسال پیامک را در سیستم ووکامرس پارسی فراهم کنید. تمامی حقوق این افزونه متعلق به تیم ووکامرس پارسی می باشد و هر گونه کپی برداری ،  فروش آن غیر مجاز می باشد.
 Author URI: http://www.woocommerce.ir/
@@ -93,8 +93,8 @@ class Sat_WC_Order_SMS {
 
     public function enqueue_scripts() {
 
-        wp_enqueue_style( 'persianwoosms-styles', plugins_url( 'css/style.css', __FILE__ ), false, date( 'Ymd' ) );
-        wp_enqueue_script( 'persianwoosms-scripts', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ), false, true );
+        // wp_enqueue_style( 'persianwoosms-styles', plugins_url( 'css/style.css', __FILE__ ), false, date( 'Ymd' ) );
+       // wp_enqueue_script( 'persianwoosms-scripts', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ), false, true );
     }
      
     public function admin_enqueue_scripts() {

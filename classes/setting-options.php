@@ -252,7 +252,11 @@ class Woocommerceir_Setting_Options {
     function get_sms_gateway() {
         $gateway = array( 
             'none'      => 'انتخاب کنید',
-            'panizsms' => 'پانیز پیامک'
+            'panizsms' => 'پانیز پیامک',
+            'parandsms' => 'پرند پیامک',
+            'gamapayamak' => 'گاما پیامک',
+            'limoosms' => 'لیمو اس ام اس',
+            'maxsms' => 'مکس اس ام اس'
         );
 
         return apply_filters( 'persianwoosms_sms_gateway', $gateway );
