@@ -53,6 +53,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.2 =
+* رفع باگ در مکث اس ام اس
 = 2.0.1 =
 * رفع چند باگ و افزودن 4 درگاه پیامک
 = 2.0 =
@@ -65,6 +67,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.2 =
+* رفع باگ در مکث اس ام اس
 = 2.0.1 =
 * رفع چند باگ و افزودن 4 درگاه پیامک
 = 2.0 =

@@ -155,7 +155,7 @@ class Woocommerceir_SMS_Gateways {
 		$client = new SoapClient('http://login.max-sms.ir/webservice/?WSDL', $mxoptions);
 		try
 		{
-			$messageId = $client->send(rawurlencode( $phone ), rawurlencode( $sms_data['sms_body'] ));
+			$messageId = $client->send(rawurlencode( $phone ),$sms_data['sms_body']);
 			sleep(3);
 		}
 		
