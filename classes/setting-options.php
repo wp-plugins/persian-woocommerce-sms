@@ -256,7 +256,8 @@ class Woocommerceir_Setting_Options {
             'parandsms' => 'پرند پیامک',
             'gamapayamak' => 'گاما پیامک',
             'limoosms' => 'لیمو اس ام اس',
-            'maxsms' => 'مکث اس ام اس'
+            'maxsms' => 'مکث اس ام اس',
+            'smsfa' => 'اس ام اس فا'
         );
 
         return apply_filters( 'persianwoosms_sms_gateway', $gateway );

@@ -21,6 +21,7 @@ Tested up to: 4.0
  * gamapayamak.com
  * limoosms.com
  * max-sms.ir
+ * smsfa.net
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
 * ارسال پیامک به مدیر در هنگام ثبت سفارش
@@ -53,6 +54,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.3 =
+* افزوده شدن درگاه smsfa
 = 2.0.2 =
 * رفع باگ در مکث اس ام اس
 = 2.0.1 =
@@ -67,6 +70,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.3 =
+* افزوده شدن درگاه smsfa
 = 2.0.2 =
 * رفع باگ در مکث اس ام اس
 = 2.0.1 =
