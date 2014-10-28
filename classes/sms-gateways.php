@@ -193,13 +193,111 @@ class Woocommerceir_SMS_Gateways {
                 '&from=' . rawurlencode( $from ) .
                 '&text=' . rawurlencode( $sms_data['sms_body'] );
 
-        $limoosms_response = file_get_contents( 'http://smsfa.net/API/SendSms.ashx?' . $content );
-        if ($limoosms_response == '1-0') {
+        $smsfa_response = file_get_contents( 'http://smsfa.net/API/SendSms.ashx?' . $content );
+        if ( ($smsfa_response != '-1') || ($smsfa_response != '-2') || ($smsfa_response != '-3') || ($smsfa_response != '-4') ) {
             $response = true;
         }
 
         return $response;
     }
+	
+	
+	/**
+     * Sends SMS via tjp.ir
+     */
+    function tjp( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+				
+		$mxoptions = array(
+		'login' => rawurlencode($username),
+		'password' => rawurlencode($password)
+		);
+		$client = new SoapClient('http://sms-login.tjp.ir/webservice/?WSDL', $mxoptions);
+		try
+		{
+			$messageId = $client->send(rawurlencode( $phone ),$sms_data['sms_body']);
+			sleep(3);
+		}
+		
+		catch (SoapFault $sf)
+		{
+			$tjp_sms_response = $sf->faultcode;
+		}
+        if ($tjp_sms_response == '') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
+	
+	/**
+     * Sends SMS via arad-sms.ir
+     */
+    function aradsms( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+
+        $content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $aradsms_response = file_get_contents( 'http://panel.arad-sms.ir/post/sendSMS.ashx?' . $content );
+        if ($aradsms_response == '1-0') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
+	/**
+     * Sends SMS via FaraPayamak.ir
+     */
+    function farapayamak( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+
+        $content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $farapayamak_response = file_get_contents( 'http://87.107.121.54/post/sendSMS.ashx?' . $content );
+        if ($farapayamak_response == '1-0') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
 
 
 

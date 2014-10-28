@@ -257,7 +257,10 @@ class Woocommerceir_Setting_Options {
             'gamapayamak' => 'گاما پیامک',
             'limoosms' => 'لیمو اس ام اس',
             'maxsms' => 'مکث اس ام اس',
-            'smsfa' => 'اس ام اس فا'
+            'smsfa' => 'اس ام اس فا',
+            'aradsms' => 'آراد پیامک',
+            'farapayamak' => 'فراپیامک',
+			'tjp' => 'TJP.IR'
         );
 
         return apply_filters( 'persianwoosms_sms_gateway', $gateway );

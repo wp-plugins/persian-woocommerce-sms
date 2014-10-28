@@ -3,7 +3,7 @@ author: Persian Woocommerce
 author URI: http://www.woocommerce.ir/
 Donate link: http://www.woocommerce.ir/
 plugin URI: http://www.woocommerce.ir/plugins.html
-Tags: woocommerce, commerce, e-commerce, commerce, shop, virtual shop, sms, sms notifications, iran, persian, farsi,woocommerce persian, e-commerce, ووکامرس, ووکامرس فارسی
+Tags: woocommerce, commerce, e-commerce, commerce, shop, virtual shop, sms, sms notifications, iran, persian, farsi,woocommerce persian, e-commerce, ووکامرس, ووکامرس فارسی,woocommerce sms
 Requires at least: 3.5
 Tested up to: 4.0
 
@@ -15,13 +15,16 @@ Tested up to: 4.0
 * مدیر فروشگاه در هنگام دریافت سفارش جدید یک پیامک دریافت می کند و همچنین مشتریان در هنگام ارسال سفارش ، تغییر وضعیت سفارش و یا تکمیل وضعیت سفارش پیامک دریافت می کنند. قابل ذکر است این افزونه با آخرین نسخه وردپرس (4) و ووکامرس فارسی (2.2) سازگاری کامل دارد.
 
 = درگاه های پیامک =
-* درگاه های پیامک فعال در افزونه
  * Panizsms.com
  * ParandSMS.com
  * gamapayamak.com
  * limoosms.com
  * max-sms.ir
  * smsfa.net
+ * arad-sms.ir
+ * farapayamak.ir
+ * sms-login.tjp.ir
+ 
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
 * ارسال پیامک به مدیر در هنگام ثبت سفارش
@@ -54,6 +57,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.4 =
+* افزوده شدن درگاه های پیامک جدید
 = 2.0.3 =
 * افزوده شدن درگاه smsfa
 = 2.0.2 =
@@ -70,6 +75,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.4 =
+* افزوده شدن درگاه های پیامک جدید
 = 2.0.3 =
 * افزوده شدن درگاه smsfa
 = 2.0.2 =
