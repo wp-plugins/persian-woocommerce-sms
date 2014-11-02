@@ -24,6 +24,8 @@ Tested up to: 4.0
  * arad-sms.ir
  * farapayamak.ir
  * sms-login.tjp.ir
+ * sms.niazpardaz.com
+ * payamafraz.ir
  
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
@@ -57,6 +59,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.5 =
+* افزوده شدن درگاه های پیامک جدید
 = 2.0.4 =
 * افزوده شدن درگاه های پیامک جدید
 = 2.0.3 =
@@ -75,6 +79,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.5 =
+* افزوده شدن درگاه های پیامک جدید
 = 2.0.4 =
 * افزوده شدن درگاه های پیامک جدید
 = 2.0.3 =

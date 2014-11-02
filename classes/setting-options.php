@@ -260,6 +260,8 @@ class Woocommerceir_Setting_Options {
             'smsfa' => 'اس ام اس فا',
             'aradsms' => 'آراد پیامک',
             'farapayamak' => 'فراپیامک',
+			'payamafraz' => 'پیام افراز',
+			'niazpardaz' => 'نیاز پرداز',
 			'tjp' => 'TJP.IR'
         );
 
