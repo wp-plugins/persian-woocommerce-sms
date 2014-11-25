@@ -262,6 +262,7 @@ class Woocommerceir_Setting_Options {
             'farapayamak' => 'فراپیامک',
 			'payamafraz' => 'پیام افراز',
 			'niazpardaz' => 'نیاز پرداز',
+			'yektasms' => 'یکتا پیامک',
 			'tjp' => 'TJP.IR'
         );
 
