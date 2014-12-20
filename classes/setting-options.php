@@ -263,6 +263,10 @@ class Woocommerceir_Setting_Options {
 			'payamafraz' => 'پیام افراز',
 			'niazpardaz' => 'نیاز پرداز',
 			'yektasms' => 'یکتا پیامک',
+			'smsbefrest' => 'اس ام اس بفرست',
+			'relax' => 'ریلکس',
+			'paaz' => 'پاز اس ام اس',
+			'hisms' => 'های اس ام اس',
 			'tjp' => 'TJP.IR'
         );
 

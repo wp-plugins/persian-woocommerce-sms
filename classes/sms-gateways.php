@@ -321,8 +321,8 @@ class Woocommerceir_SMS_Gateways {
                 '&from=' . rawurlencode( $from ) .
                 '&text=' . rawurlencode( $sms_data['sms_body'] );
 
-        $niazpardaz_response = file_get_contents( 'http://sms.niazpardaz.com/post/sendSMS.ashx?' . $content );
-        if ($niazpardaz_response == '1-0') {
+        $niazpardaz_response = file_get_contents( 'http://login.niazpardaz.com/SMSInOutBox/SendSms?' . $content );
+        if ($niazpardaz_response == 'SendWasSuccessful') {
             $response = true;
         }
 
@@ -382,6 +382,121 @@ class Woocommerceir_SMS_Gateways {
 
         $yektasms_response = file_get_contents( 'http://87.107.121.54/post/sendSMS.ashx?' . $content );
         if ($yektasms_response == '1-0') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	/**
+     * Sends SMS via smsbefrest.ir
+     */
+	function smsbefrest( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+
+        $content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $smsbefrest_response = file_get_contents( 'http://87.107.121.52/post/send.asmx?' . $content );
+        if ($smsbefrest_response == '1-0') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
+	/**
+     * Sends SMS via Relax.ir
+     */
+	function relax( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+
+        $content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $relax_response = file_get_contents( 'http://onlinepanel.ir/post/send.asmx?' . $content );
+        if ($relax_response == '1-0') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
+	/**
+     * Sends SMS via sms.paaz.ir
+     */
+	function paaz( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+
+        $content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $paaz_response = file_get_contents( 'http://sms.paaz.ir/post/send.asmx?' . $content );
+        if ($paaz_response == '1-0') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
+	/**
+     * Sends SMS via hi-sms.ir
+     */
+    function hisms( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+
+        $content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $hisms_response = file_get_contents( 'http://login.hi-sms.ir/post/sendSMS.ashx?' . $content );
+        if ($hisms_response == '1-0') {
             $response = true;
         }
 

@@ -27,6 +27,10 @@ Tested up to: 4.0
  * sms.niazpardaz.com
  * payamafraz.ir
  * YektaSMS.com
+ * Relax.ir
+ * sms.paaz.ir
+ * smsbefrest.ir
+ * hi-sms.ir
  
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
