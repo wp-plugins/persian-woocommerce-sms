@@ -5,7 +5,7 @@ Donate link: http://www.woocommerce.ir/
 plugin URI: http://www.woocommerce.ir/plugins.html
 Tags: woocommerce, commerce, e-commerce, commerce, shop, virtual shop, sms, sms notifications, iran, persian, farsi,woocommerce persian, e-commerce, ووکامرس, ووکامرس فارسی,woocommerce sms
 Requires at least: 3.5
-Tested up to: 4.0
+Tested up to: 4.2
 
 ارسال پیامک به مشتریان در سیستم فروشگاه ساز ووکامرس
 
@@ -31,6 +31,7 @@ Tested up to: 4.0
  * sms.paaz.ir
  * smsbefrest.ir
  * hi-sms.ir
+ * postgah.com
  
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
@@ -64,6 +65,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.8 =
+* افزوده شدن درگاه پیامک جدید و رفع مشکل
 = 2.0.6 =
 * افزوده شدن درگاه های پیامک جدید
 = 2.0.5 =
@@ -86,6 +89,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.8 =
+* افزوده شدن درگاه پیامک جدید و رفع مشکل
 = 2.0.6 =
 * افزوده شدن درگاه های پیامک جدید
 = 2.0.5 =

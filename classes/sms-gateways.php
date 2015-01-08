@@ -437,7 +437,7 @@ class Woocommerceir_SMS_Gateways {
                 '&from=' . rawurlencode( $from ) .
                 '&text=' . rawurlencode( $sms_data['sms_body'] );
 
-        $relax_response = file_get_contents( 'http://onlinepanel.ir/post/send.asmx?' . $content );
+        $relax_response = file_get_contents( 'http://onlinepanel.ir/post/send.ashx?' . $content );
         if ($relax_response == '1-0') {
             $response = true;
         }
@@ -466,7 +466,7 @@ class Woocommerceir_SMS_Gateways {
                 '&from=' . rawurlencode( $from ) .
                 '&text=' . rawurlencode( $sms_data['sms_body'] );
 
-        $paaz_response = file_get_contents( 'http://sms.paaz.ir/post/send.asmx?' . $content );
+        $paaz_response = file_get_contents( 'http://sms.paaz.ir/post/send.ashx?' . $content );
         if ($paaz_response == '1-0') {
             $response = true;
         }
@@ -497,6 +497,35 @@ class Woocommerceir_SMS_Gateways {
 
         $hisms_response = file_get_contents( 'http://login.hi-sms.ir/post/sendSMS.ashx?' . $content );
         if ($hisms_response == '1-0') {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
+	/**
+     * Sends SMS via postgah
+     */
+    function postgah( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+				
+		$content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $postgah_response = file_get_contents( 'http://postgah.net/API/SendSms.ashx?' . $content );
+        if ( ($postgah_response != '-1') || ($postgah_response != '-2') || ($postgah_response != '-3') || ($postgah_response != '-4') ) {
             $response = true;
         }
 
