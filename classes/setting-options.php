@@ -269,6 +269,7 @@ class Woocommerceir_Setting_Options {
 			'hisms' => 'های اس ام اس',
 			'postgah' => 'پستگاه',
 			'idehpayam' => 'ایده پیام',
+			'azaranpayamak' => 'آذران پیامک',
 			'tjp' => 'TJP.IR'
         );
 

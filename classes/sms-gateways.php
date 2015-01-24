@@ -559,6 +559,35 @@ class Woocommerceir_SMS_Gateways {
         return $response;
     }
 	
+	/**
+     * Sends SMS via azaranpayamak
+     */
+    function azaranpayamak( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+				
+		$content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $azaranpayamak_response = file_get_contents( 'http://azaranpayamak.net/API/SendSms.ashx?' . $content );
+        if ( ($azaranpayamak_response != '0') || ($azaranpayamak_response != '1') || ($azaranpayamak_response != '2') || ($azaranpayamak_response != '9') || ($azaranpayamak_response != '10') ) {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
 
 
 

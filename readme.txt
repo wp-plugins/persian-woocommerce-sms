@@ -33,6 +33,7 @@ Tested up to: 4.2
  * hi-sms.ir
  * postgah.com
  * idehpayam.com
+ * azaranpayamak.ir
  
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
@@ -66,6 +67,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.10 =
+* افزوده شده درگاه های جدید
 = 2.0.9 =
 * افزوده شده درگاه های جدید
 = 2.0.8 =
@@ -92,6 +95,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.10 =
+* افزوده شده درگاه آذران پیامک و ایده پیام
 = 2.0.9 =
 * افزوده شده درگاه های جدید
 = 2.0.8 =
