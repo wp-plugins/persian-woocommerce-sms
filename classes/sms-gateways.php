@@ -532,6 +532,33 @@ class Woocommerceir_SMS_Gateways {
         return $response;
     }
 	
+	/**
+     * Sends SMS via idehpayam
+     */
+    function idehpayam( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+				
+		$content = 'uname=' . rawurlencode( $username ) .
+                '&pass=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&msg=' . rawurlencode( $sms_data['sms_body'] );
+
+        $idehpayam_response = file_get_contents( 'http://92.50.2.3/class/sms/webservice/send_url.php?' . $content );
+            $response = true;
+
+        return $response;
+    }
+	
 
 
 
