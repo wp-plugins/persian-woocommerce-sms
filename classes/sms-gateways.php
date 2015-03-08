@@ -37,7 +37,7 @@ class Woocommerceir_SMS_Gateways {
                 '&from=' . rawurlencode( $from ) .
                 '&text=' . rawurlencode( $sms_data['sms_body'] );
 
-        $panizsms_response = file_get_contents( 'http://www.panizsms.ir/post/sendSMS.ashx?' . $content );
+        $panizsms_response = file_get_contents( 'http://87.107.121.54/post/sendSMS.ashx?' . $content );
         if ($panizsms_response == '1-0') {
             $response = true;
         }
@@ -261,7 +261,7 @@ class Woocommerceir_SMS_Gateways {
                 '&from=' . rawurlencode( $from ) .
                 '&text=' . rawurlencode( $sms_data['sms_body'] );
 
-        $aradsms_response = file_get_contents( 'http://panel.arad-sms.ir/post/sendSMS.ashx?' . $content );
+        $aradsms_response = file_get_contents( 'http://arad-sms.ir/post/sendSMS.ashx?' . $content );
         if ($aradsms_response == '1-0') {
             $response = true;
         }
@@ -474,34 +474,6 @@ class Woocommerceir_SMS_Gateways {
         return $response;
     }
 	
-	/**
-     * Sends SMS via hi-sms.ir
-     */
-    function hisms( $sms_data ) {
-        $response = false;
-
-        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
-        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
-        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
-        $phone = $sms_data['number'];
-
-        if ( empty( $username ) || empty( $password ) ) {
-            return $response;
-        }
-
-        $content = 'username=' . rawurlencode( $username ) .
-                '&password=' . rawurlencode( $password ) .
-                '&to=' . rawurlencode( $phone ) .
-                '&from=' . rawurlencode( $from ) .
-                '&text=' . rawurlencode( $sms_data['sms_body'] );
-
-        $hisms_response = file_get_contents( 'http://login.hi-sms.ir/post/sendSMS.ashx?' . $content );
-        if ($hisms_response == '1-0') {
-            $response = true;
-        }
-
-        return $response;
-    }
 	
 	/**
      * Sends SMS via postgah
@@ -580,7 +552,7 @@ class Woocommerceir_SMS_Gateways {
                 '&from=' . rawurlencode( $from ) .
                 '&text=' . rawurlencode( $sms_data['sms_body'] );
 
-        $azaranpayamak_response = file_get_contents( 'http://azaranpayamak.net/API/SendSms.ashx?' . $content );
+        $azaranpayamak_response = file_get_contents( 'http://azaranpayamak.ir/API/SendSms.ashx?' . $content );
         if ( ($azaranpayamak_response != '0') || ($azaranpayamak_response != '1') || ($azaranpayamak_response != '2') || ($azaranpayamak_response != '9') || ($azaranpayamak_response != '10') ) {
             $response = true;
         }
@@ -588,6 +560,35 @@ class Woocommerceir_SMS_Gateways {
         return $response;
     }
 	
+	
+	/**
+     * Sends SMS via sms.ir
+     */
+    function smsir( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+				
+		$content = 'user=' . rawurlencode( $username ) .
+                '&pass=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&lineNo=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $smsir_response = file_get_contents( 'http://panelesms.net/SendMessage.ashx?' . $content );
+        if ($smsir_response == 'ok') {
+            $response = true;
+        }
+
+        return $response;
+    }
 
 
 

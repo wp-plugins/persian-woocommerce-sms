@@ -34,7 +34,9 @@ Tested up to: 4.2
  * postgah.com
  * idehpayam.com
  * azaranpayamak.ir
+ * SMS.IR
  
+= امکانات =
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
 * ارسال پیامک به مدیر در هنگام ثبت سفارش
@@ -48,6 +50,7 @@ Tested up to: 4.2
 * نمایش وضعیت ارسال پیامک در برگه جزئیات سفارش در قسمت توضیحات
 = Support =
 *  [Persian Support in woocommerce.ir](http://woocommerce.ir/)
+*  [پشتیبانی در ووکامرس فارسی](http://woocommerce.ir/)
 
 == Installation ==
 1. Upload `persian-woocommerce-sms` folder to the `/wp-content/plugins/` directory
@@ -67,6 +70,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.0.11 =
+* افزوده شده درگاه های جدید
 = 2.0.10 =
 * افزوده شده درگاه های جدید
 = 2.0.9 =
@@ -95,6 +100,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.0.11 =
+* افزودن شدن درگاه SMS.IR و رفع مشکل پانیز پیامک
 = 2.0.10 =
 * افزوده شده درگاه آذران پیامک و ایده پیام
 = 2.0.9 =
