@@ -589,6 +589,65 @@ class Woocommerceir_SMS_Gateways {
 
         return $response;
     }
+	
+	/**
+     * Sends SMS via manirani.ir
+     */
+    function manirani( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+				
+		$content = 'username=' . rawurlencode( $username ) .
+                '&password=' . rawurlencode( $password ) .
+                '&to=' . rawurlencode( $phone ) .
+                '&from=' . rawurlencode( $from ) .
+                '&text=' . rawurlencode( $sms_data['sms_body'] );
+
+        $manirani_response = file_get_contents( 'http://sms.manirani.ir/API/SendSms.ashx?' . $content );
+        if ( ($manirani_response != '-1') || ($manirani_response != '-2') || ($manirani_response != '-3') || ($manirani_response != '-4') ) {
+            $response = true;
+        }
+
+        return $response;
+    }
+	
+	
+	/**
+     * Sends SMS via websms.ir
+     */
+    function websms( $sms_data ) {
+        $response = false;
+
+        $username = persianwoosms_get_option( 'persian_woo_sms_username', 'persianwoosms_gateway' );
+        $password = persianwoosms_get_option( 'persian_woo_sms_password', 'persianwoosms_gateway' );
+        $from = persianwoosms_get_option( 'persian_woo_sms_sender', 'persianwoosms_gateway' );
+        $phone = $sms_data['number'];
+
+        if ( empty( $username ) || empty( $password ) ) {
+            return $response;
+        }
+				
+		$content = 'cusername=' . rawurlencode( $username ) .
+                '&cpassword=' . rawurlencode( $password ) .
+                '&cmobileno=' . rawurlencode( $phone ) .
+                '&csender=' . rawurlencode( $from ) .
+                '&cbody=' . rawurlencode( $sms_data['sms_body'] );
+
+        $websms_response = file_get_contents( 'http://s1.websms.ir/wservice.php?' . $content );
+        if ( ($websms_response != '112') || ($websms_response != '116')) {
+            $response = true;
+        }
+
+        return $response;
+    }
 
 
 

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: ارسال پیامک ووکامرس
-Version: 2.0.11
+Version: 2.1.0
 Plugin URI: http://www.woocommerce.ir/plugins.html
 Description: این افزونه شما را قادر می سازد تا براحتی قابلیت ارسال پیامک را در سیستم ووکامرس پارسی فراهم کنید. تمامی حقوق این افزونه متعلق به تیم ووکامرس پارسی می باشد و هر گونه کپی برداری ،  فروش آن غیر مجاز می باشد.
 Author URI: http://www.woocommerce.ir/
@@ -221,8 +221,7 @@ class Sat_WC_Order_SMS {
     public function pharse_sms_body( $content, $order_status, $order_id, $order_amount, $product_list ) {
 
         $order = $order_id;
-        $order_total = $order_amount. ' '. get_post_meta( $order_id, '_order_currency', true );
-        $find = array(
+        $order_total = $order_amount. ' '. sprintf( get_woocommerce_price_format(), get_woocommerce_currency_symbol( get_post_meta( $order_id, '_order_currency', true ) ), '' );        $find = array(
             '[order_id]',
             '[order_status]',
             '[order_amount]',
@@ -231,7 +230,7 @@ class Sat_WC_Order_SMS {
         $replace = array(
             $order,
             $order_status,
-            $order_total,
+            wc_get_order_status_name($order_status),
             $product_list
         );
 

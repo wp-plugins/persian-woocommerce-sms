@@ -270,6 +270,8 @@ class Woocommerceir_Setting_Options {
 			'idehpayam' => 'IdehPayam.com',
 			'azaranpayamak' => 'azaranpayamak.ir',
 			'smsir' => 'SMS.ir',
+			'websms' => 'websms.ir',
+			'manirani' => 'manirani.ir',
 			'tjp' => 'TJP.ir'
         );
 

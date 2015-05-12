@@ -1,5 +1,6 @@
 === Persian Woocommerce SMS ===
-author: Persian Woocommerce
+author: ووکامرس فارسی
+Contributors: Persianscript
 author URI: http://www.woocommerce.ir/
 Donate link: http://www.woocommerce.ir/
 plugin URI: http://www.woocommerce.ir/plugins.html
@@ -35,6 +36,8 @@ Tested up to: 4.2
  * idehpayam.com
  * azaranpayamak.ir
  * SMS.IR
+ * websms.ir
+ * manirani.ir
  
 = امکانات =
 
@@ -70,6 +73,9 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.1.0 =
+* افزوده شده درگاه های جدید
+* رفع مشکل ارسال وضعیت سفارش به صورت انگلیسی
 = 2.0.11 =
 * افزوده شده درگاه های جدید
 = 2.0.10 =
@@ -100,6 +106,9 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.1.0 =
+* افزوده شده درگاه های جدید
+* رفع مشکل ارسال وضعیت سفارش به صورت انگلیسی
 = 2.0.11 =
 * افزودن شدن درگاه SMS.IR و رفع مشکل پانیز پیامک
 = 2.0.10 =
