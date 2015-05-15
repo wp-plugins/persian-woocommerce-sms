@@ -38,7 +38,7 @@ Tested up to: 4.2
  * SMS.IR
  * websms.ir
  * manirani.ir
- 
+
 = امکانات =
 
 * ارسال پیامک به مشتری در هنگام ثبت سفارش
@@ -73,6 +73,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.1.1 =
+* رفع باگ
 = 2.1.0 =
 * افزوده شده درگاه های جدید
 * رفع مشکل ارسال وضعیت سفارش به صورت انگلیسی
@@ -106,6 +108,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.1.1 =
+* رفع باگ
 = 2.1.0 =
 * افزوده شده درگاه های جدید
 * رفع مشکل ارسال وضعیت سفارش به صورت انگلیسی
