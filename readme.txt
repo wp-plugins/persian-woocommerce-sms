@@ -16,7 +16,7 @@ Tested up to: 4.2
 * مدیر فروشگاه در هنگام دریافت سفارش جدید یک پیامک دریافت می کند و همچنین مشتریان در هنگام ارسال سفارش ، تغییر وضعیت سفارش و یا تکمیل وضعیت سفارش پیامک دریافت می کنند. قابل ذکر است این افزونه با آخرین نسخه وردپرس (4) و ووکامرس فارسی (2.2) سازگاری کامل دارد.
 
 = درگاه های پیامک =
- * Panizsms.com
+ * sepehr-itc.com
  * ParandSMS.com
  * gamapayamak.com
  * limoosms.com
@@ -73,6 +73,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 2.1.2 =
+* تغییر نام وبسرویس پانیز پیامک به سپهر فناوران تدبیر سامان
 = 2.1.1 =
 * رفع باگ
 = 2.1.0 =
@@ -108,6 +110,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 2.1.2 =
+* تغییر نام وبسرویس پانیز پیامک به سپهر فناوران تدبیر سامان
 = 2.1.1 =
 * رفع باگ
 = 2.1.0 =

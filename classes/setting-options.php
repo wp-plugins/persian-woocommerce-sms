@@ -252,7 +252,7 @@ class Woocommerceir_Setting_Options {
     function get_sms_gateway() {
         $gateway = array( 
             'none'      => 'انتخاب کنید',
-            'panizsms' => 'PanizSMS.com',
+            'panizsms' => 'Sepehr-ITC.com',
             'parandsms' => 'ParandSMS.com',
             'gamapayamak' => 'GAMAPayamak.com',
             'limoosms' => 'LimooSMS.com',
