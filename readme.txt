@@ -1,6 +1,6 @@
 === Persian Woocommerce SMS ===
 author: ووکامرس فارسی
-Contributors: Persianscript
+Contributors: hannanstd,Persianscript
 author URI: http://www.woocommerce.ir/
 Donate link: http://www.woocommerce.ir/
 plugin URI: http://www.woocommerce.ir/plugins.html
@@ -73,6 +73,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 3. send sms to customer from orders page
 
 == Changelog ==
+= 3.0.0 =
+* بازنویسی کامل و اضافه کردن امکانات جدید
 = 2.1.2 =
 * تغییر نام وبسرویس پانیز پیامک به سپهر فناوران تدبیر سامان
 = 2.1.1 =
@@ -110,6 +112,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * Added: New Web services (5 new sms panel...)
 
 == Upgrade Notice ==
+= 3.0.0 =
+* بازنویسی کامل و اضافه کردن امکانات جدید
 = 2.1.2 =
 * تغییر نام وبسرویس پانیز پیامک به سپهر فناوران تدبیر سامان
 = 2.1.1 =
