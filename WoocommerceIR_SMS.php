@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: افزونه حرفه ای پیامک ووکامرس
-Version: 3.0.2
+Version: 3.0.3
 Plugin URI: http://www.woocommerce.ir/plugins.html
 Description: این افزونه شما را قادر می سازد تا براحتی قابلیت ارسال پیامک را در سیستم ووکامرس پارسی فراهم کنید. تمامی حقوق این افزونه متعلق به تیم ووکامرس پارسی می باشد و هر گونه کپی برداری ،  فروش آن غیر مجاز می باشد.
 Author URI: http://woocommerce.ir/
@@ -14,7 +14,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 if ( !defined( 'PS_WOO_SMS_VERSION' ) )
-	define( 'PS_WOO_SMS_VERSION', '3.0.2' );
+	define( 'PS_WOO_SMS_VERSION', '3.0.3' );
 
 if ( !defined( 'PS_WOO_SMS_PLUGIN_PATH' ) )
 	define( 'PS_WOO_SMS_PLUGIN_PATH', plugins_url('', __FILE__) );

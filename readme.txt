@@ -84,6 +84,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 14. Screen shot 14
 
 == Changelog ==
+= 3.0.3 =
+* تغییر در وبسرویس LimooSMS
 = 3.0.2 =
 * بهبود متاباکس موجود در صفحه محصول
 = 3.0.1 =
@@ -131,6 +133,8 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 * نسخه اولیه
 
 == Upgrade Notice ==
+= 3.0.3 =
+* تغییر در وبسرویس LimooSMS
 = 3.0.2 =
 * بهبود متاباکس موجود در صفحه محصول
 = 3.0.1 =

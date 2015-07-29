@@ -592,7 +592,7 @@ class WoocommerceIR_Gateways_SMS {
             return $response;
         }
 				
-		$client = new SoapClient("http://p.gamapayamak.com/post/send.asmx?wsdl");
+		$client = new SoapClient("http://87.107.121.54/post/send.asmx?wsdl");
 		try
 		{	
 			$encoding = "UTF-8";     
@@ -636,7 +636,7 @@ class WoocommerceIR_Gateways_SMS {
             return $response;
         }
 				
-		$client = new SoapClient("http://panel.limoosms.com/post/send.asmx?wsdl");
+		$client = new SoapClient("http://87.107.121.54/post/send.asmx?wsdl");
 		try
 		{	
 			$encoding = "UTF-8";     

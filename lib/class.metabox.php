@@ -92,7 +92,7 @@ class WoocommerceIR_Metabox_SMS {
 				</select>
 			</p>
 			<p>
-                <textarea rows="5" cols="20" class="input-text" id="persianwoosms_sms_to_buyer" name="persianwoosms_sms_to_buyer" style="width: 246px; height: 78px;"></textarea>
+                <textarea class="input-text" id="persianwoosms_sms_to_buyer" name="persianwoosms_sms_to_buyer" style="width: 100%; height: 78px;"></textarea>
             </p>
             
 			<p> 
