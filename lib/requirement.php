@@ -119,12 +119,12 @@ class WoocommerceIR_Settings_Fields_SMS {
 
     function callback_select( $args ) {
         $value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['std'] ) );
-        $size = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'regular';
-        $html = sprintf( '<select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id'] );
+        $size = isset( $args['size'] ) && !is_null( $args['size'] ) ? $args['size'] : 'wc-enhanced-select regular';
+        $html = sprintf( '<div style="max-width:350px"><select class="%1$s" name="%2$s[%3$s]" id="%2$s[%3$s]">', $size, $args['section'], $args['id'] );
         foreach ( $args['options'] as $key => $label ) {
             $html .= sprintf( '<option value="%s"%s>%s</option>', $key, selected( $value, $key, false ), $label );
         }
-        $html .= sprintf( '</select>' );
+        $html .= sprintf( '</select></div>' );
         $html .= sprintf( '<span class="description"> %s</span>', $args['desc'] );
         echo $html;
     }
@@ -138,7 +138,7 @@ class WoocommerceIR_Settings_Fields_SMS {
     }
 
     function callback_html( $args ) {
-        echo $args['desc'];
+        echo sprintf( '<span class="description"> %s</span>', $args['desc'] );
     }
 
     function callback_wysiwyg( $args ) {
@@ -220,6 +220,10 @@ class WoocommerceIR_Settings_Fields_SMS {
     }
 
     function show_forms() {
+		if ( defined( 'WC_VERSION' ) )  {
+			wp_enqueue_style( 'woocommerce_admin_styles', WC()->plugin_url() . '/assets/css/admin.css', array(), WC_VERSION );
+			wp_enqueue_script( 'wc-enhanced-select' );
+		}
 		if( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == 'true' ) {
 			?>
 			<div class="updated">
@@ -478,6 +482,7 @@ function Shamsi_HANNANStd($g_y,$g_m,$g_d,$mod=''){
 
 function str_replace_tags_order( $content, $order_status, $order_id, $order , $all_items, $vendor_items ) {
 	$price = intval($order->order_total). ' '. sprintf( get_woocommerce_price_format(), get_woocommerce_currency_symbol( $order->get_order_currency() ), '' ); 
+	$count_items = count(explode( '-' , $all_items));
 	$find = array(
 		'{first_name}',
 		'{last_name}',    
@@ -487,6 +492,7 @@ function str_replace_tags_order( $content, $order_status, $order_id, $order , $a
 		'{status}',
 		'{price}',
 		'{all_items}',
+		'{count_items}',
 		'{vendor_items}',
 		'{transaction_id}',
     );
@@ -499,6 +505,7 @@ function str_replace_tags_order( $content, $order_status, $order_id, $order , $a
 		wc_get_order_status_name($order_status),
         $price,
 		$all_items,
+		$count_items,
 		$vendor_items,
 		get_post_meta( $order_id, '_transaction_id', true ),
 	);
@@ -519,6 +526,7 @@ function str_replace_tags_product( $content, $product_id ) {
 		$sale_price_dates_to = Shamsi_HANNANStd( $year , $month , $day, '/' );
 	}
 	$find = array(
+		'{product_id}',
 		'{sku}',
 		'{product_title}',
 		'{regular_price}',
@@ -528,6 +536,7 @@ function str_replace_tags_product( $content, $product_id ) {
 		'{stock}',
     );
 	$replace = array(
+		$product_id,
 		get_post_meta( $product_id, '_sku', true ),
 		get_the_title( $product_id ),
 		$regular_price,

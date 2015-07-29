@@ -845,9 +845,18 @@ class WoocommerceIR_Gateways_SMS {
 		if ( empty( $username ) || empty( $password ) ) {
 			return $response;
 		}
-		foreach ( (array) $sms_data['number'] as $to ) {	
-			$status = file_get_contents("http://n.sms.ir/SendMessage.ashx?user={$username}&pass={$password}&lineNo={$from}&to={$to}&text={$massage}");
-			if ( strtolower($status) == 'ok'  )
+		
+		date_default_timezone_set('Asia/Tehran');
+		$client= new SoapClient('http://ip.sms.ir/ws/SendReceive.asmx?wsdl');
+		foreach ( (array) $sms_data['number'] as $to ) {
+			$parameters['userName'] = $username;
+			$parameters['password'] = $password;
+			$parameters['mobileNos'] = array(doubleval($to));
+			$parameters['messages'] = array($massage);
+			$parameters['lineNumber'] = $from;
+			$parameters['sendDateTime'] = date("Y-m-d")."T".date("H:i:s");
+			$status= $client->SendMessageWithLineNumber($parameters)->message;
+			if ( empty($status) )
 				$status = true;
 			else
 				$status = false;

@@ -68,11 +68,26 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 
 
 == Screenshots ==
-1. Settings page
-2. send sms to any
-3. send sms to customer from orders page
+1. Screen shot 1
+2. Screen shot 2
+3. Screen shot 3
+4. Screen shot 4
+5. Screen shot 5
+6. Screen shot 6
+7. Screen shot 7
+8. Screen shot 8
+9. Screen shot 9
+10. Screen shot 10
+11. Screen shot 11
+12. Screen shot 12
+13. Screen shot 13
+14. Screen shot 14
 
 == Changelog ==
+= 3.0.1 =
+* بهبود رابط کاربری
+* اضافه شدن 2 کد میانبر جدید
+* هماهنگی با برخی وبسرویس ها
 = 3.0.0 =
 * بازنویسی کامل و اضافه کردن امکانات جدید
 = 2.1.2 =
@@ -105,13 +120,19 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 = 2.0 =
 * کد نویسی مجدد و افزوده شدن امکانات جدید
 = 1.5 =
-* Fixed: some bugs fixed
+* رفع باگ
 = 1.4 =
-* Fixed: some bugs fixed
+* رفع باگ
 = 1.3 =
-* Added: New Web services (5 new sms panel...)
+* اضافه شدن وبسرویس های جدید
+= 1.0 =
+* نسخه اولیه
 
 == Upgrade Notice ==
+= 3.0.1 =
+* بهبود رابط کاربری
+* اضافه شدن 2 کد میانبر جدید
+* هماهنگی با برخی وبسرویس ها
 = 3.0.0 =
 * بازنویسی کامل و اضافه کردن امکانات جدید
 = 2.1.2 =
@@ -144,11 +165,13 @@ You can read complete documentations on the [woocommerce.ir](http://www.woocomme
 = 2.0 =
 * کد نویسی مجدد و افزوده شدن امکانات جدید
 = 1.5 =
-* Fixed: some bugs fixed
+* رفع باگ
 = 1.4 =
-* Fixed: some bugs fixed
+* رفع باگ
 = 1.3 =
-* Added: New Web services (5 new sms panel...)
+* اضافه شدن وبسرویس های جدید
+= 1.0 =
+* نسخه اولیه
 
 ==Traducciones ==
 You can read complete documentations on the [woocommerce.ir](http://www.woocommerce.ir)

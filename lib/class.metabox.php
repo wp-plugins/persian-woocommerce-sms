@@ -161,10 +161,11 @@ class WoocommerceIR_Metabox_SMS {
 					$groups = explode ( ',' , $groups);
 		
 					if ( in_array( $group, $groups ) ) {
-						$numbers_list[] = $number;
+						if ( strlen($number) > 5 ) 
+							$numbers_list[] = $number;
 					}
 				}
-				$numbers_list = array_unique( explode( ',', implode( ',', $numbers_list )) );
+				$numbers_list = array_unique( $numbers_list );
 		
 				$buyer_sms_data['number']   = $numbers_list;
 				$count = count( $numbers_list );

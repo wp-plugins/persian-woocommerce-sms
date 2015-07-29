@@ -313,7 +313,7 @@ class WoocommerceIR_Settings_SMS {
                 array(
                     'name' => 'sms_body',
                     'label' =>'متن پیامک به مشتری',
-                    'desc' => "شما می توانید متنی دلخواه برای ارسال پیامک به مشتری وارد کنید .<br/>همچنین می توانید از کدهای میانبر زیر نیز استفاده نمایید :<br/><code>{first_name}</code> : نام خریدار ، <code>{last_name}</code> : نام خانوادگی خریدار ، <code>{phone}</code> شماره موبایل خریدار ، <code>{email}</code> : ایمیل خریدار<br/><code>{order_id}</code> : شماره سفارش ، <code>{status}</code> : وضعیت سفارش ، <code>{price}</code> : مبلغ سفارش ، <code>{all_items}</code> : آیتم های سفارش  ، <code>{transaction_id}</code> : شماره تراکنش",
+                    'desc' => "شما می توانید متنی دلخواه برای ارسال پیامک به مشتری وارد کنید .<br/>همچنین می توانید از کدهای میانبر زیر نیز استفاده نمایید :<br/><code>{first_name}</code> : نام خریدار ، <code>{last_name}</code> : نام خانوادگی خریدار ، <code>{phone}</code> شماره موبایل خریدار ، <code>{email}</code> : ایمیل خریدار<br/><code>{order_id}</code> : شماره سفارش ، <code>{status}</code> : وضعیت سفارش ، <code>{price}</code> : مبلغ سفارش ، <code>{all_items}</code> : آیتم های سفارش  ، <code>{count_items}</code> : تعداد آیتم های سفارش  ، <code>{transaction_id}</code> : شماره تراکنش",
                     'type' => 'textarea',
                     'default' => "سلام {last_name} {first_name}\nسفارش {order_id} دریافت شد و هم اکنون در وضعیت {status} می باشد\nآیتم های سفارش : {all_items}\nمبلغ سفارش : {price}\nشماره تراکنش : {transaction_id}"
                 ),
@@ -370,7 +370,7 @@ class WoocommerceIR_Settings_SMS {
                 array(
                     'name' => 'super_admin_sms_body',
                     'label' => 'متن پیامک سفارش به مدیران اصلی',
-                    'desc' => "شما می توانید متنی دلخواه برای ارسال پیامک به مدیران اصلی را وارد کنید .<br/>همچنین می توانید از کدهای میانبر زیر نیز استفاده نمایید :<br/><code>{first_name}</code> : نام خریدار ، <code>{last_name}</code> : نام خانوادگی خریدار ، <code>{phone}</code> شماره موبایل خریدار ، <code>{email}</code> : ایمیل خریدار<br/><code>{order_id}</code> : شماره سفارش ، <code>{status}</code> : وضعیت سفارش ، <code>{price}</code> : مبلغ سفارش ، <code>{all_items}</code> : آیتم های سفارش  ، <code>{transaction_id}</code> : شماره تراکنش",
+                    'desc' => "شما می توانید متنی دلخواه برای ارسال پیامک به مدیران اصلی را وارد کنید .<br/>همچنین می توانید از کدهای میانبر زیر نیز استفاده نمایید :<br/><code>{first_name}</code> : نام خریدار ، <code>{last_name}</code> : نام خانوادگی خریدار ، <code>{phone}</code> شماره موبایل خریدار ، <code>{email}</code> : ایمیل خریدار<br/><code>{order_id}</code> : شماره سفارش ، <code>{status}</code> : وضعیت سفارش ، <code>{price}</code> : مبلغ سفارش ، <code>{all_items}</code> : آیتم های سفارش  ، <code>{count_items}</code> : تعداد آیتم های سفارش  ، <code>{transaction_id}</code> : شماره تراکنش",
                     'type' => 'textarea',
                     'default' => "سلام مدیر\nسفارش {order_id} ثبت شده است و هم اکنون در وضعیت {status} می باشد\nآیتم های سفارش : {all_items}\nمبلغ سفارش : {price}"
                 ),
@@ -417,7 +417,7 @@ class WoocommerceIR_Settings_SMS {
 				array(
                     'name' => 'header_4',
                     'label' => 'شورت کد های قابل استفاده',
-                    'desc' => "شورت کد های قابل استفاده در متن پیامک های مرتبط با موجوی انبار :<br/><br/><code>{sku}</code> : شناسه محصول ، <code>{product_title}</code> : عنوان محصول ، <code>{stock}</code> : موجودی انبار",
+                    'desc' => "شورت کد های قابل استفاده در متن پیامک های مرتبط با موجوی انبار :<br/><br/><code>{product_id}</code> : آیدی محصول ، <code>{sku}</code> : شناسه محصول ، <code>{product_title}</code> : عنوان محصول ، <code>{stock}</code> : موجودی انبار",
                     'type' => 'html',
                 ),
 				
@@ -480,7 +480,7 @@ class WoocommerceIR_Settings_SMS {
 				array(
                     'name' => 'header_4',
                     'label' => 'شورت کد های قابل استفاده',
-                    'desc' => "شورت کد های قابل استفاده در متن پیامک ها :<br/><br/><code>{sku}</code> : شناسه محصول ، <code>{product_title}</code> : عنوان محصول ، <code>{regular_price}</code> قیمت اصلی ، <code>{onsale_price}</code> : قیمت فروش فوق العاده<br/><code>{onsale_from}</code> : تاریخ شروع فروش فوق العاده ، <code>{onsale_to}</code> : تاریخ اتمام فروش فوق العاده ، <code>{stock}</code> : موجودی انبار",
+                    'desc' => "شورت کد های قابل استفاده در متن پیامک ها :<br/><br/><code>{product_id}</code> : آیدی محصول ، <code>{sku}</code> : شناسه محصول ، <code>{product_title}</code> : عنوان محصول ، <code>{regular_price}</code> قیمت اصلی ، <code>{onsale_price}</code> : قیمت فروش فوق العاده<br/><code>{onsale_from}</code> : تاریخ شروع فروش فوق العاده ، <code>{onsale_to}</code> : تاریخ اتمام فروش فوق العاده ، <code>{stock}</code> : موجودی انبار",
                     'type' => 'html',
                 ),
 				

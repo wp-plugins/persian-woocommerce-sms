@@ -32,7 +32,7 @@ class WoocommerceIR_Notification_SMS {
 		echo '<hr/>'; 
 		echo '<div class="hannanstd-woo-tabs-hidden-how-to-info" style="display: none;">
 				<h3 style="padding-top:0;padding-bottom:0;">شورت کد های قابل استفاده در متن پیامک ها :</h3>
-				<p style="margin:0;padding-left:13px;"><code>{sku}</code> : شناسه محصول ، <code>{product_title}</code> : عنوان محصول ، <code>{regular_price}</code> قیمت اصلی ، <code>{onsale_price}</code> : قیمت فروش فوق العاده<br/><code>{onsale_from}</code> : تاریخ شروع فروش فوق العاده ، <code>{onsale_to}</code> : تاریخ اتمام فروش فوق العاده ، <code>{stock}</code> : موجودی انبار</p>
+				<p style="margin:0;padding-left:13px;"><code>{product_id}</code> : آیدی محصول ، <code>{sku}</code> : شناسه محصول ، <code>{product_title}</code> : عنوان محصول ، <code>{regular_price}</code> قیمت اصلی ، <code>{onsale_price}</code> : قیمت فروش فوق العاده<br/><code>{onsale_from}</code> : تاریخ شروع فروش فوق العاده ، <code>{onsale_to}</code> : تاریخ اتمام فروش فوق العاده ، <code>{stock}</code> : موجودی انبار</p>
 			</div>
 			<div class="dashicons dashicons-editor-help hannanstd-tabs-how-to-toggle" title="راهنمایی"></div>';
 	
@@ -166,10 +166,12 @@ class WoocommerceIR_Notification_SMS {
 		$thepostid = $product->id;
 		$this->scripts_product_frontend( $thepostid );
 		?>
-		<form class="cart" style="max-width:293px" enctype="multipart/form-data" method="post">
-			<img src="<?php echo PS_WOO_SMS_PLUGIN_PATH; ?>/assets/images/tick.png" style="display:none !important" />
-			<img src="<?php echo PS_WOO_SMS_PLUGIN_PATH; ?>/assets/images/false.png" style="display:none !important" />
-			<img src="<?php echo PS_WOO_SMS_PLUGIN_PATH; ?>/assets/images/ajax-loader.gif" style="display:none !important" />
+		<form class="woo_sms_form" id="woo_sms_form"  method="POST">
+			<div style="display:none !important;width:0px !important;height:0px !important;">
+				<img src="<?php echo PS_WOO_SMS_PLUGIN_PATH; ?>/assets/images/tick.png"/>
+				<img src="<?php echo PS_WOO_SMS_PLUGIN_PATH; ?>/assets/images/false.png"/>
+				<img src="<?php echo PS_WOO_SMS_PLUGIN_PATH; ?>/assets/images/ajax-loader.gif"/>
+			</div>
 			<input type="checkbox" id="sms_news_check" name="sms_news_check" value="1"/>
 			<label id="sms_news_check_label"  for="sms_news_check" >
 			<?php echo get_post_meta( $thepostid, '_is_sms_set', true ) ? get_post_meta( $thepostid, '_notif_title', true ) : ps_sms_options( 'notif_title', 'sms_notif_settings', '' ); ?>
@@ -216,9 +218,9 @@ class WoocommerceIR_Notification_SMS {
 			<?php
 			}
 			?>
-			<input type="text" id="sms_news_text" name="sms_news_text" style="width:auto;direction:ltr;text-align:left;"/>	
-			<button id="sms_news_btn" class="single_add_to_cart_button button alt" type="submit">ثبت</button>
-			<span id="submit_result"></span>
+			<input type="text" id="sms_news_text" name="sms_news_text" style="display:inline;width:auto;direction:ltr;text-align:left;"/>	
+			<button id="sms_news_btn" class="single_add_to_cart_button button alt" style="display:inline" type="submit">ثبت</button>
+			<br/><span id="submit_result"></span><br/>
 		</form>
 	<?php
 	}
