@@ -54,7 +54,7 @@ class WoocommerceIR_Metabox_SMS {
             <div class="persianwoosms_send_sms_result"></div>
             <h4>ارسال پيامک دلخواه به مشترکين اين محصول</h4>
             <p>
-				<select name="select_group" id="select_group">
+				<select name="select_group" class="wc-enhanced-select" id="select_group">
 					<?php
 					$options = get_post_meta( $thepostid, '_is_sms_set', true ) ? get_post_meta( $thepostid, '_notif_options', true ) :  ps_sms_options( 'notif_options', 'sms_notif_settings', '' );
 					$options = !empty($options) ? $options : array();
