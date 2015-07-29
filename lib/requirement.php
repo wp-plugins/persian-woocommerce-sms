@@ -351,6 +351,8 @@ function ps_sms_options( $option, $section, $default = '' ) {
 }
 
 function get_all_woo_status_ps_sms() {
+	if ( !function_exists('wc_get_order_statuses') )
+		return;
 	$statuses = wc_get_order_statuses() ? wc_get_order_statuses() : array();
 	$opt_statuses = array();
 	foreach ( (array) $statuses as $status_val => $status_name ) {
@@ -360,6 +362,8 @@ function get_all_woo_status_ps_sms() {
 }
 
 function get_all_woo_status_ps_sms_for_admin() {
+	if ( !function_exists('wc_get_order_statuses') )
+		return;
 	$statuses = wc_get_order_statuses() ? wc_get_order_statuses() : array();
 	$opt_statuses = array();
 	foreach ( (array) $statuses as $status_val => $status_name ) {
@@ -371,6 +375,8 @@ function get_all_woo_status_ps_sms_for_admin() {
 }
 
 function get_allowed_woo_status_ps_sms() {
+	if ( !function_exists('wc_get_order_statuses') )
+		return;
 	$statuses = wc_get_order_statuses() ? wc_get_order_statuses() : array();
 	$order_status_settings  = ps_sms_options( 'order_status', 'sms_buyer_settings', array() );
 	$allowed_statuses = array();
